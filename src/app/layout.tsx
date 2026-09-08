@@ -27,6 +27,7 @@ export default function RootLayout({
           requestUrl={config.requestUrl}
           phone={business.phone}
           tel={business.tel}
+          basePath={config.basePath}
         />
         <main id="main" tabIndex={-1}>
           {children}
