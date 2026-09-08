@@ -7,6 +7,7 @@ describe("deployment and intake boundaries", () => {
   it("provides a usable local request destination with no backend", () => {
     const config = createConfig({});
     assert.equal(config.requestUrl, "/request-service/");
+    assert.equal(config.hasExternalRequest, false);
     assert.equal(config.portalUrl, undefined);
     assert.equal(config.indexable, false);
     assert.equal(config.basePath, "");
@@ -17,6 +18,7 @@ describe("deployment and intake boundaries", () => {
       NEXT_PUBLIC_CUSTOMER_PORTAL_URL: "https://portal.example.com/",
     });
     assert.equal(config.requestUrl, "https://portal.example.com/request");
+    assert.equal(config.hasExternalRequest, true);
     assert.equal(config.portalUrl, "https://portal.example.com/");
   });
   it("supports a GitHub Pages repository base path without changing canonicals", () => {
@@ -29,6 +31,7 @@ describe("deployment and intake boundaries", () => {
       config.requestUrl,
       "/bens-backflow-website/request-service/",
     );
+    assert.equal(config.hasExternalRequest, false);
     assert.equal(config.siteUrl, "https://bensbackflowsc.com/");
   });
   it("rejects unsafe and incomplete configuration instead of shipping broken CTAs", () => {
