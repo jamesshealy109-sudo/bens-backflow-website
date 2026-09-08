@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 import { redirects } from "./src/lib/redirects.ts";
-const config: NextConfig = {
-  trailingSlash: true,
-  poweredByHeader: false,
+
+const pagesPreview = process.env.GITHUB_PAGES_PREVIEW === "true";
+const previewBasePath = process.env.NEXT_PUBLIC_BASE_PATH || "/bens-backflow-website";
+
+const productionOnly: NextConfig = {
   async redirects() {
     return redirects;
   },
@@ -26,4 +28,17 @@ const config: NextConfig = {
     ];
   },
 };
+
+const config: NextConfig = {
+  trailingSlash: true,
+  poweredByHeader: false,
+  ...(pagesPreview
+    ? {
+        output: "export",
+        basePath: previewBasePath,
+        images: { unoptimized: true },
+      }
+    : productionOnly),
+};
+
 export default config;
