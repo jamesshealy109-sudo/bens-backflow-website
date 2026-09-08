@@ -1,0 +1,44 @@
+name: Website quality
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: npm run typecheck
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - name: Build configured production variant
+        run: npm run build
+        env:
+          SITE_INDEXABLE: "true"
+          NEXT_PUBLIC_REQUEST_SERVICE_URL: https://portal.example.com/request
+          NEXT_PUBLIC_CUSTOMER_PORTAL_URL: https://portal.example.com/
+          NEXT_PUBLIC_GA_ID: G-TEST1234
+      - name: Verify indexing, integration handoffs and analytics consent
+        run: npx playwright test configured.spec.ts --project=desktop
+        env:
+          SITE_INDEXABLE: "true"
+          NEXT_PUBLIC_REQUEST_SERVICE_URL: https://portal.example.com/request
+          NEXT_PUBLIC_CUSTOMER_PORTAL_URL: https://portal.example.com/
+          NEXT_PUBLIC_GA_ID: G-TEST1234
+          TEST_CONFIGURED: "true"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-quality-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
