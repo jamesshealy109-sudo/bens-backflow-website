@@ -20,4 +20,4 @@ Refine the current blue identity into deep indigo, warm white and restrained gre
 
 ## Boundaries
 
-User confirms Ben is taking over from his dad. Do not transfer Kyle’s biography to Ben. Statewide work is user-confirmed; Upstate remains primary. No city doorway pages, invented reviews, unverified accreditation badges, fake employee photos or fake forms. Safe request fallback is phone/email, with online intake enabled only by a real HTTPS URL. Preview indexing is disabled by default; production requires explicit configuration.
+Kyle is the current owner/operator of Ben’s Backflow Testing & Repair, continuing the second-generation family business. Do not describe Ben as the current owner/operator. Statewide work is user-confirmed; Upstate remains primary. No city doorway pages, invented reviews, unverified accreditation badges, fake employee photos or fake forms. Safe request fallback is phone/email, with online intake enabled only by a real HTTPS URL. Preview indexing is disabled by default; production requires explicit configuration.

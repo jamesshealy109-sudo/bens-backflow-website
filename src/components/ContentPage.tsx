@@ -3,7 +3,9 @@ import { type PageContent, pageByPath } from "@/content/pages";
 import { Actions, ContactBand } from "./Actions";
 import { JsonLd } from "./JsonLd";
 import { breadcrumbSchema } from "@/lib/seo";
-import { business, config } from "@/lib/config";
+import { business, config, withBasePath } from "@/lib/config";
+
+const local = (path: string) => withBasePath(path, config.basePath);
 
 export function Breadcrumbs({ path, title }: { path: string; title: string }) {
   const parts = path.split("/").filter(Boolean);
@@ -25,7 +27,7 @@ export function Breadcrumbs({ path, title }: { path: string; title: string }) {
               {i === items.length - 1 ? (
                 <span aria-current="page">{item.name}</span>
               ) : (
-                <a href={item.path}>{item.name}</a>
+                <a href={local(item.path)}>{item.name}</a>
               )}
             </li>
           ))}
@@ -41,7 +43,7 @@ export function PageCards({ paths }: { paths: string[] }) {
       {paths.map((path) => {
         const page = pageByPath(path);
         return (
-          <a className="page-card" href={path} key={path}>
+          <a className="page-card" href={local(path)} key={path}>
             <span className="eyebrow">
               {page?.article
                 ? "Field guide"
@@ -121,7 +123,7 @@ export function ContentPage({ page }: { page: PageContent }) {
         {page.image && (
           <div className="page-image">
             <Image
-              src={`/images/${page.image}.webp`}
+              src={local(`/images/${page.image}.webp`)}
               alt={page.alt ?? ""}
               fill
               priority
@@ -139,7 +141,9 @@ export function ContentPage({ page }: { page: PageContent }) {
           <ul>
             {business.cities.map((city) => (
               <li id={city.toLowerCase().replaceAll(" ", "-")} key={city}>
-                <a href="/service-areas/upstate-south-carolina/">{city}</a>
+                <a href={local("/service-areas/upstate-south-carolina/")}>
+                  {city}
+                </a>
               </li>
             ))}
           </ul>
@@ -162,7 +166,14 @@ export function ContentPage({ page }: { page: PageContent }) {
                   </ul>
                 )}
                 {section.link && (
-                  <a className="text-link" href={section.link.href}>
+                  <a
+                    className="text-link"
+                    href={
+                      section.link.href.startsWith("/")
+                        ? local(section.link.href)
+                        : section.link.href
+                    }
+                  >
                     {section.link.label} <span aria-hidden="true">↗</span>
                   </a>
                 )}
@@ -177,7 +188,7 @@ export function ContentPage({ page }: { page: PageContent }) {
               to start.
             </p>
             <Actions />
-            <a href="/resources/preparing-for-a-backflow-test/">
+            <a href={local("/resources/preparing-for-a-backflow-test/")}>
               What to have ready →
             </a>
           </aside>

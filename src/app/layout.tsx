@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
 import { JsonLd } from "@/components/JsonLd";
-import { business, config } from "@/lib/config";
+import { business, config, withBasePath } from "@/lib/config";
 import { businessSchema } from "@/lib/seo";
 import "./globals.css";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   applicationName: business.name,
   robots: { index: config.indexable, follow: config.indexable },
   verification: { google: config.verification },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: withBasePath("/icon.svg", config.basePath) },
 };
 export default function RootLayout({
   children,
@@ -27,6 +27,7 @@ export default function RootLayout({
           requestUrl={config.requestUrl}
           phone={business.phone}
           tel={business.tel}
+          basePath={config.basePath}
         />
         <main id="main" tabIndex={-1}>
           {children}

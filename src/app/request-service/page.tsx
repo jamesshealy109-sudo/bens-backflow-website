@@ -1,6 +1,9 @@
 import { metadata as makeMetadata } from "@/lib/seo";
-import { business, config } from "@/lib/config";
+import { business, config, withBasePath } from "@/lib/config";
 import { Breadcrumbs } from "@/components/ContentPage";
+
+const local = (path: string) => withBasePath(path, config.basePath);
+
 export const metadata = makeMetadata(
   "Request Service",
   "Call or email Ben’s Backflow with your property address, service needs and testing notice. Upstate South Carolina and statewide jobs welcome.",
@@ -70,7 +73,7 @@ export default function RequestService() {
             Looking after several properties? Include the full list of
             locations.
           </p>
-          {config.requestUrl !== "/request-service/" && (
+          {config.hasExternalRequest && (
             <p>
               <a
                 className="button"
@@ -96,7 +99,7 @@ export default function RequestService() {
             We’ll confirm the service details and appointment with you. Sending
             an inquiry does not reserve a time.
           </p>
-          <a className="text-link" href="/privacy/">
+          <a className="text-link" href={local("/privacy/")}>
             How we handle your information →
           </a>
         </div>

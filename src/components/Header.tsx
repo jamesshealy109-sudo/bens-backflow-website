@@ -8,14 +8,22 @@ const links = [
   ["/about/", "About"],
   ["/resources/", "Resources"],
 ] as const;
+
+function localPath(path: string, basePath: string) {
+  if (!basePath || !path.startsWith("/")) return path;
+  return `${basePath}${path}`;
+}
+
 export function Header({
   requestUrl,
   phone,
   tel,
+  basePath,
 }: {
   requestUrl: string;
   phone: string;
   tel: string;
+  basePath: string;
 }) {
   const [open, setOpen] = useState(false);
   const button = useRef<HTMLButtonElement>(null);
@@ -44,7 +52,7 @@ export function Header({
         <div className="container header-inner">
           <a
             className="brand"
-            href="/"
+            href={localPath("/", basePath)}
             aria-label="Ben’s Backflow Testing & Repair home"
           >
             <span className="brand-icon" aria-hidden="true">
@@ -73,8 +81,8 @@ export function Header({
             {links.map(([href, label]) => (
               <a
                 key={href}
-                href={href}
-                aria-current={pathname.startsWith(href) ? "page" : undefined}
+                href={localPath(href, basePath)}
+                aria-current={pathname.endsWith(href) ? "page" : undefined}
                 onClick={() => setOpen(false)}
               >
                 {label}
