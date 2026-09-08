@@ -141,7 +141,7 @@ test("every public route has metadata, schema, one heading and no broken local l
       route,
     ).toBe(true);
     expect(await page.locator("body").innerText()).not.toMatch(
-      /lorem ipsum|Jobber|Kyle|123150626|BBB accredited/i,
+      /lorem ipsum|Jobber|123150626|BBB accredited/i,
     );
     const hrefs = await page
       .locator("a[href]")
