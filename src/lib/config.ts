@@ -37,6 +37,10 @@ export function createConfig(env: Environment) {
       "NEXT_PUBLIC_SITE_URL must be an origin without a path, query or fragment",
     );
   const prefix = basePath(env.NEXT_PUBLIC_BASE_PATH);
+  const externalRequestUrl = httpsUrl(
+    env.NEXT_PUBLIC_REQUEST_SERVICE_URL,
+    "NEXT_PUBLIC_REQUEST_SERVICE_URL",
+  );
   const gaId = env.NEXT_PUBLIC_GA_ID?.trim() || undefined;
   if (gaId && !/^G-[A-Z0-9]+$/.test(gaId))
     throw new Error("NEXT_PUBLIC_GA_ID must be a GA4 measurement ID");
@@ -44,10 +48,8 @@ export function createConfig(env: Environment) {
     siteUrl,
     basePath: prefix,
     requestUrl:
-      httpsUrl(
-        env.NEXT_PUBLIC_REQUEST_SERVICE_URL,
-        "NEXT_PUBLIC_REQUEST_SERVICE_URL",
-      ) ?? withBasePath("/request-service/", prefix),
+      externalRequestUrl ?? withBasePath("/request-service/", prefix),
+    hasExternalRequest: Boolean(externalRequestUrl),
     portalUrl: httpsUrl(
       env.NEXT_PUBLIC_CUSTOMER_PORTAL_URL,
       "NEXT_PUBLIC_CUSTOMER_PORTAL_URL",
