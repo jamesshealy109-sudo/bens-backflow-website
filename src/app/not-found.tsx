@@ -1,4 +1,8 @@
 import { Actions } from "@/components/Actions";
+import { config, withBasePath } from "@/lib/config";
+
+const local = (path: string) => withBasePath(path, config.basePath);
+
 export default function NotFound() {
   return (
     <section className="container page-hero">
@@ -10,11 +14,11 @@ export default function NotFound() {
       </h1>
       <p>
         The page may have moved. Explore our{" "}
-        <a className="text-link" href="/services/">
+        <a className="text-link" href={local("/services/")}>
           services
         </a>
         , return{" "}
-        <a className="text-link" href="/">
+        <a className="text-link" href={local("/")}>
           home
         </a>
         , or get in touch.
