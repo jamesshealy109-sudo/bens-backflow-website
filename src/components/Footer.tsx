@@ -1,6 +1,8 @@
 import Image from "next/image";
-import { business, config } from "@/lib/config";
+import { business, config, withBasePath } from "@/lib/config";
 import { services } from "@/content/pages";
+
+const local = (path: string) => withBasePath(path, config.basePath);
 
 export function Footer() {
   return (
@@ -9,7 +11,7 @@ export function Footer() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-company">
-              <a href="/" className="footer-wordmark">
+              <a href={local("/")} className="footer-wordmark">
                 BEN’S BACKFLOW<span>TESTING & REPAIR</span>
               </a>
               <p>
@@ -31,20 +33,20 @@ export function Footer() {
             <div>
               <h2>Services</h2>
               {services.map((service) => (
-                <a href={service.path} key={service.path}>
+                <a href={local(service.path)} key={service.path}>
                   {service.eyebrow}
                 </a>
               ))}
             </div>
             <div>
               <h2>Explore</h2>
-              <a href="/service-areas/upstate-south-carolina/">
+              <a href={local("/service-areas/upstate-south-carolina/")}>
                 Upstate South Carolina
               </a>
-              <a href="/south-carolina/">Statewide service</a>
-              <a href="/about/">About Ben’s Backflow</a>
-              <a href="/resources/">Resources</a>
-              <a href="/faq/">Frequently asked questions</a>
+              <a href={local("/south-carolina/")}>Statewide service</a>
+              <a href={local("/about/")}>About Ben’s Backflow</a>
+              <a href={local("/resources/")}>Resources</a>
+              <a href={local("/faq/")}>Frequently asked questions</a>
             </div>
             <div>
               <h2>Let’s talk</h2>
@@ -63,7 +65,7 @@ export function Footer() {
               >
                 <span>Site by</span>
                 <Image
-                  src="/images/strataworks-logo.webp"
+                  src={local("/images/strataworks-logo.webp")}
                   alt="StrataWorks - Precision. Performance. Partnership."
                   width={136}
                   height={94}
@@ -76,11 +78,11 @@ export function Footer() {
               © {new Date().getFullYear()} {business.legalName}
             </span>
             <div>
-              <a href="/privacy/">Privacy</a>
-              <a href="/terms/">Terms</a>
+              <a href={local("/privacy/")}>Privacy</a>
+              <a href={local("/terms/")}>Terms</a>
               <a className="f3-mark" href="https://f3midlands.com/">
                 <Image
-                  src="/images/f3-midlands-logo.webp"
+                  src={local("/images/f3-midlands-logo.webp")}
                   alt="F3 Midlands"
                   width={30}
                   height={30}
