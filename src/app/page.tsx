@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { metadata as makeMetadata } from "@/lib/seo";
-import { business } from "@/lib/config";
+import { business, config, withBasePath } from "@/lib/config";
 import { services, resources, faqs } from "@/content/pages";
 import { Actions, ContactBand } from "@/components/Actions";
 import { PageCards } from "@/components/ContentPage";
+
+const local = (path: string) => withBasePath(path, config.basePath);
 
 export const metadata = makeMetadata(
   "Backflow Testing & Repair in Upstate South Carolina",
@@ -42,7 +44,7 @@ export default function Home() {
           </div>
           <div className="hero-visual">
             <Image
-              src="/images/trailer-residential.webp"
+              src={local("/images/trailer-residential.webp")}
               alt="Ben’s Backflow branded service trailer and truck parked at a property"
               fill
               priority
@@ -87,7 +89,7 @@ export default function Home() {
             {services.map((service, index) => (
               <a
                 className="service-card"
-                href={service.path}
+                href={local(service.path)}
                 key={service.path}
               >
                 <div className="service-card-top">
@@ -115,7 +117,7 @@ export default function Home() {
         <div className="container process-grid">
           <div className="process-photo">
             <Image
-              src="/images/backflow-assembly-test.webp"
+              src={local("/images/backflow-assembly-test.webp")}
               alt="Backflow testing gauges connected to an assembly during field work"
               fill
               sizes="(max-width: 760px) 100vw, 40vw"
@@ -167,7 +169,7 @@ export default function Home() {
             </ol>
             <a
               className="text-link"
-              href="/resources/preparing-for-a-backflow-test/"
+              href={local("/resources/preparing-for-a-backflow-test/")}
             >
               What to have ready for your visit{" "}
               <span aria-hidden="true">↗</span>
@@ -192,7 +194,7 @@ export default function Home() {
               with the whole property in view.
             </p>
             <a
-              href="/services/commercial-backflow/"
+              href={local("/services/commercial-backflow/")}
               className="button button-light"
             >
               Commercial service <span aria-hidden="true">↗</span>
@@ -215,7 +217,7 @@ export default function Home() {
               Our home region is the Upstate. Our service availability extends
               throughout the state.
             </p>
-            <a className="text-link" href="/service-areas/">
+            <a className="text-link" href={local("/service-areas/")}>
               Find your service area ↗
             </a>
           </div>
@@ -228,7 +230,7 @@ export default function Home() {
               ))}
             </ul>
             <p>And surrounding Upstate communities.</p>
-            <a href="/south-carolina/">
+            <a href={local("/south-carolina/")}>
               Outside the Upstate? Let’s talk statewide service. ↗
             </a>
           </div>
@@ -245,7 +247,7 @@ export default function Home() {
                 Practical answers.
               </h2>
             </div>
-            <a className="text-link" href="/resources/">
+            <a className="text-link" href={local("/resources/")}>
               Visit the resource center ↗
             </a>
           </div>
@@ -261,7 +263,7 @@ export default function Home() {
               <br />
               worth knowing.
             </h2>
-            <a className="text-link" href="/faq/">
+            <a className="text-link" href={local("/faq/")}>
               All frequently asked questions ↗
             </a>
           </div>
