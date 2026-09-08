@@ -6,7 +6,7 @@ The Backflow Operations Platform remains separate. This website has no customer 
 
 ## Preview
 
-The current GitHub-hosted preview is deployed from `main` with GitHub Pages:
+The current GitHub-hosted preview is deployed from `main` with GitHub Pages and updates automatically when `main` changes:
 
 https://jamesshealy109-sudo.github.io/bens-backflow-website/
 
