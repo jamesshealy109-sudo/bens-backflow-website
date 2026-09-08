@@ -34,6 +34,13 @@ jobs:
           NEXT_PUBLIC_CUSTOMER_PORTAL_URL: https://portal.example.com/
           NEXT_PUBLIC_GA_ID: G-TEST1234
           TEST_CONFIGURED: "true"
+      - name: Build GitHub Pages preview variant
+        run: npm run build
+        env:
+          GITHUB_PAGES_PREVIEW: "true"
+          NEXT_PUBLIC_BASE_PATH: /bens-backflow-website
+          NEXT_PUBLIC_SITE_URL: https://bensbackflowsc.com
+          SITE_INDEXABLE: "false"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
