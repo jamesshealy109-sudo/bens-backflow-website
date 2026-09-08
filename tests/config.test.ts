@@ -25,6 +25,10 @@ describe("deployment and intake boundaries", () => {
       NEXT_PUBLIC_SITE_URL: "https://bensbackflowsc.com",
     });
     assert.equal(config.basePath, "/bens-backflow-website");
+    assert.equal(
+      config.requestUrl,
+      "/bens-backflow-website/request-service/",
+    );
     assert.equal(config.siteUrl, "https://bensbackflowsc.com/");
   });
   it("rejects unsafe and incomplete configuration instead of shipping broken CTAs", () => {
