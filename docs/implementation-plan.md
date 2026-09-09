@@ -1,6 +1,6 @@
 # Ben’s Backflow website implementation plan
 
-Goal: a complete public marketing website in a new GitHub repository, prepared for deployment to bensbackflowsc.com. No GitHub Pages or Sites deployment.
+Original implementation goal: a public marketing website in GitHub, prepared for a normal Node deployment at bensbackflowsc.com. The subsequently authorized GitHub Pages visual preview is preserved. The current visual direction and execution plan are in `superpowers/plans/2026-09-09-premium-industrial-redesign.md`.
 
 ## Design
 

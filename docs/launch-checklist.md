@@ -6,12 +6,12 @@
 - [ ] Confirm current tester credentials before accepting production testing requests; add a precise credential claim only with evidence. Old certificate details are not assumed to transfer.
 - [ ] Review About wording: Kyle is the current owner/operator carrying forward his father's second-generation family business. No founding year is verified or published.
 - [ ] Confirm any desired hours, warranty, emergency availability or specific credentials before publishing those claims.
-- [ ] Review photo rights and historical lettering/secondary phone on the service trailer. Obtain a current Ben portrait when available; do not misidentify the technician in old photos.
+- [ ] Review photo rights and historical lettering/secondary phone on the service trailer. A verified Kyle portrait is optional for About; higher-resolution field/equipment photography is the priority. Do not identify the technician in old photos without confirmation.
 - [ ] Review the privacy and website terms against actual business/hosting/platform practices. No new warranty or SMS enrollment is created by this site.
 
 ## Integration and deployment
 
-- [ ] Select Node hosting and connect a preview. GitHub Pages is not part of this project.
+- [ ] Select eventual production Node hosting. The existing GitHub Pages deployment is a noindex visual preview only; preserve that workflow until production hosting is chosen.
 - [ ] Test phone/email flows. If online requests are desired, supply and verify the real StrataWorks request URL and optional portal URL, then rebuild.
 - [ ] Configure GA4/Search Console only when ready; verify consent behavior and cross-domain conversion ownership. Do not count a portal click as a submitted lead.
 - [ ] Set `NEXT_PUBLIC_SITE_URL=https://bensbackflowsc.com` and `SITE_INDEXABLE=true` for the actual production build.

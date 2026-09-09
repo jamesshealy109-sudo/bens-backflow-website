@@ -6,8 +6,8 @@ const links = [
   ["/services/", "Services"],
   ["/services/commercial-backflow/", "Commercial"],
   ["/service-areas/", "Service areas"],
-  ["/about/", "About"],
   ["/resources/", "Resources"],
+  ["/about/", "About"],
 ] as const;
 
 function localPath(path: string, basePath: string) {

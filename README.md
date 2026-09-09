@@ -47,7 +47,7 @@ The GitHub Pages preview uses a separate static-export build mode with `/bens-ba
 | Variable                          | Default / behavior                                                                                     |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | `NEXT_PUBLIC_SITE_URL`            | `https://bensbackflowsc.com`; HTTPS origin only, used for canonicals and schema                        |
-| `NEXT_PUBLIC_BASE_PATH`           | Blank for production; `/bens-backflow-website` for the GitHub Pages preview                           |
+| `NEXT_PUBLIC_BASE_PATH`           | Blank for production; `/bens-backflow-website` for the GitHub Pages preview                            |
 | `SITE_INDEXABLE`                  | `false`; set exactly `true` only for production. Controls robots metadata, robots.txt and X-Robots-Tag |
 | `NEXT_PUBLIC_REQUEST_SERVICE_URL` | Blank → local request page with working call/email links; real public HTTPS URL → intake handoff       |
 | `NEXT_PUBLIC_CUSTOMER_PORTAL_URL` | Blank → portal link omitted; real public HTTPS URL → footer/request-page link                          |
@@ -81,4 +81,12 @@ Consent-based GA4 can track `phone_click`, `request_service_click`, `email_click
 
 Kyle is the current owner/operator. Confirm Kyle’s current certification, hours and warranty before publishing any unverified claims, obtain real platform URLs if online intake is wanted, and review the updated privacy/terms before the production cutover.
 
-See [verification record](docs/verification.md) for completed checks and test limits.
+See the [industrial redesign record](docs/industrial-redesign.md) for the current design and verification. The [original verification record](docs/verification.md) documents the initial build.
+
+## Industrial visual system
+
+The homepage composition lives in `src/components/IndustrialHome.tsx`, with shared tokens and responsive rules in `src/app/globals.css`. Headings use locally bundled Barlow Condensed (Fontsource/OFL); no runtime font CDN is needed. Home uses technical field imagery, an asymmetric dark hero, large service panels, a five-stage process, commercial coverage, Kyle's story and editorial resource rows. Numbers are section identifiers, never business statistics.
+
+The single About content record is in `src/content/pages.ts`; the explicit About route renders that same record. Kyle is the current owner/operator. No founding year is verified or published.
+
+After a Pages-mode build, run `npx playwright test --config=playwright.preview.config.ts` to verify the exported site under its repository prefix. To run the same read-only checks against the live preview, set `PREVIEW_URL=https://jamesshealy109-sudo.github.io/bens-backflow-website/`. The test server is local tooling only and is not a production backend.
