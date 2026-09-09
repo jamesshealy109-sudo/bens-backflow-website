@@ -9,9 +9,7 @@ test("home, navigation, conversion paths and accessible layout", async ({
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
-  await expect(page.locator("h1")).toHaveText(
-    "Backflow testing.In good hands.",
-  );
+  await expect(page.locator("h1")).toHaveText("Test.Repair.Report.");
   await expect(
     page.getByRole("link", { name: /Call \(864\) 238-5277/ }).first(),
   ).toHaveAttribute("href", "tel:+18642385277");
@@ -43,6 +41,7 @@ test("home, navigation, conversion paths and accessible layout", async ({
   expect(a11y.violations).toEqual([]);
   await page.locator(".site-footer").scrollIntoViewIfNeeded();
   for (const img of await page.locator("img").all()) {
+    await img.scrollIntoViewIfNeeded();
     await expect
       .poll(() =>
         img.evaluate(
@@ -141,7 +140,7 @@ test("every public route has metadata, schema, one heading and no broken local l
       route,
     ).toBe(true);
     expect(await page.locator("body").innerText()).not.toMatch(
-      /lorem ipsum|Jobber|123150626|BBB accredited/i,
+      /lorem ipsum|Jobber|1999|123150626|BBB accredited|Ben is the owner/i,
     );
     const hrefs = await page
       .locator("a[href]")

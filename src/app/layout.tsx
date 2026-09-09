@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { business, config, withBasePath } from "@/lib/config";
 import { businessSchema } from "@/lib/seo";
 import "./globals.css";
+import "@fontsource/barlow-condensed/latin-600.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(config.siteUrl),

@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 
 const links = [
   ["/services/", "Services"],
+  ["/services/commercial-backflow/", "Commercial"],
   ["/service-areas/", "Service areas"],
   ["/about/", "About"],
   ["/resources/", "Resources"],
@@ -42,7 +43,7 @@ export function Header({
     <>
       <div className="utility-bar">
         <div className="container">
-          <span>UPSTATE ROOTS. SOUTH CAROLINA REACH.</span>
+          <span>UPSTATE SOUTH CAROLINA / STATEWIDE SERVICE</span>
           <a href={tel} data-event="phone_click">
             {phone}
           </a>
@@ -56,7 +57,7 @@ export function Header({
             aria-label="Ben’s Backflow Testing & Repair home"
           >
             <span className="brand-icon" aria-hidden="true">
-              B<span>↗</span>
+              B<span>+</span>
             </span>
             <span>
               <strong>BEN’S BACKFLOW</strong>

@@ -40,11 +40,11 @@ export function ContactBand() {
     <section className="contact-band" id="request">
       <div className="container contact-band-inner">
         <div>
-          <p className="eyebrow">Let’s take care of it</p>
+          <p className="eyebrow">YOUR NEXT STEP / DIRECT CONTACT</p>
           <h2>
-            A notice, a failed test,
+            Need a test?
             <br />
-            or a question. Start here.
+            Let’s get it handled.
           </h2>
           <p>
             Tell us the property and what you need. We’ll discuss the next step.
