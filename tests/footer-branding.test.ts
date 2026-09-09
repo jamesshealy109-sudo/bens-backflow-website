@@ -11,15 +11,14 @@ test("footer partner marks use translucent button styling instead of opaque squa
 
   assert.match(
     css,
-    /\.footer-grid \.strata-credit\s*\{[\s\S]*background:\s*rgba\(255,\s*255,\s*255,\s*0\.\d+\)/,
+    /\.footer-grid \.strata-credit[\s\S]*background:\s*rgba\(255,\s*255,\s*255,\s*0\.\d+\)/,
   );
   assert.match(
     css,
-    /\.strata-credit img\s*\{[\s\S]*background:\s*transparent/,
+    /\.strata-credit img,[\s\S]*\.f3-mark img\s*\{[\s\S]*background:\s*transparent/,
   );
   assert.match(
     css,
     /\.f3-mark\s*\{[\s\S]*background:\s*rgba\(255,\s*255,\s*255,\s*0\.\d+\)/,
   );
-  assert.match(css, /\.f3-mark img\s*\{[\s\S]*background:\s*transparent/);
 });
