@@ -1,0 +1,54 @@
+.footer-grid .strata-credit,
+.f3-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.footer-grid .strata-credit {
+  gap: 13px;
+  width: fit-content;
+  padding: 10px 12px;
+}
+
+.footer-grid .strata-credit:hover,
+.f3-mark:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.strata-credit img,
+.f3-mark img {
+  display: block;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.strata-credit img {
+  width: 95px;
+  height: auto;
+}
+
+.f3-mark {
+  width: 42px;
+  height: 42px;
+  padding: 6px;
+}
+
+.f3-mark img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
