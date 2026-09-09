@@ -520,18 +520,18 @@ export const otherPages: PageContent[] = [
     path: "/about/",
     title: "About Ben’s Backflow Testing & Repair",
     description:
-      "Meet the next generation of Ben’s Backflow. Ben is taking over from his dad, continuing a family business serving the Upstate and customers across South Carolina.",
+      "Meet Kyle, the current owner/operator of Ben’s Backflow, carrying forward a second-generation family business in the Upstate with statewide South Carolina service.",
     eyebrow: "About Ben’s Backflow",
-    heading: "A family business. The next generation.",
+    heading: "A family business. Carried forward.",
     intro:
-      "Ben is the owner/operator taking over from his dad. The work remains rooted in backflow testing and repair, with the Upstate at the center of the business.",
+      "Kyle is the current owner/operator of Ben’s Backflow Testing & Repair, carrying forward the second-generation family business his father built. The Upstate remains at the center of the work.",
     image: "trailer-residential",
     alt: "Ben’s Backflow service truck and branded trailer at a property",
     sections: [
       {
         heading: "A practical trade, carried forward",
         paragraphs: [
-          "The company has served the Upstate since 1999. Today, Ben is taking the business into its next chapter: helping property owners arrange testing, resolve assembly problems and keep their reports in order.",
+          "Kyle carries the family business forward through direct owner involvement: discussing the property, arranging the work and helping customers understand the result. Backflow testing, repair and reporting remain the focus.",
           "Backflow is the company’s focus. Alongside testing, repair and replacement, we repair existing lawn irrigation systems. When you contact us, start with the property and the problem—we will talk through what you need.",
         ],
       },

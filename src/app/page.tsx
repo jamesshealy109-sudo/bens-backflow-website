@@ -39,7 +39,7 @@ export default function Home() {
             <Actions />
             <div className="hero-note">
               <span aria-hidden="true">✓</span> Family business{" "}
-              <span className="note-divider" /> Serving the Upstate since 1999
+              <span className="note-divider" /> Second-generation business
             </div>
           </div>
           <div className="hero-visual">
@@ -57,7 +57,7 @@ export default function Home() {
             <div className="photo-corner" aria-hidden="true">
               SC
               <br />
-              <span>EST. 1999</span>
+              <span>UPSTATE</span>
             </div>
           </div>
         </div>

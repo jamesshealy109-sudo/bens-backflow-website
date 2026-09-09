@@ -4,7 +4,7 @@
 
 - [ ] Confirm current contact number and email with Ben.
 - [ ] Confirm current tester credentials before accepting production testing requests; add a precise credential claim only with evidence. Old certificate details are not assumed to transfer.
-- [ ] Review About wording: Ben taking over from his dad; company history since 1999 comes from the existing site.
+- [ ] Review About wording: Kyle is the current owner/operator carrying forward his father's second-generation family business. No founding year is verified or published.
 - [ ] Confirm any desired hours, warranty, emergency availability or specific credentials before publishing those claims.
 - [ ] Review photo rights and historical lettering/secondary phone on the service trailer. Obtain a current Ben portrait when available; do not misidentify the technician in old photos.
 - [ ] Review the privacy and website terms against actual business/hosting/platform practices. No new warranty or SMS enrollment is created by this site.

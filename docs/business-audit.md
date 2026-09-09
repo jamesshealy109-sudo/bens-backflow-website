@@ -10,7 +10,7 @@ Audit date: September 8, 2026.
 | (864) 238-5277; bensbackflow@gmail.com | Current contact page | Contact CTAs |
 | Kyle is the current owner/operator | User confirmation, September 8, 2026 | About page and ownership copy |
 | Second-generation family business | User confirmation/current business history | Brand story |
-| Family company serving the Upstate since 1999 | Current About page | Company history only |
+| Founding year is not verified | User clarification, September 9, 2026; conflicting public history | Remove date claims from published copy |
 | Commercial, residential and irrigation backflow testing; passing reports submitted to water provider | Current service pages | Service scope/process |
 | Assembly repair, replacement and retesting | Current repair page | Service scope |
 | Existing irrigation diagnostics/repair; not new installations or interior plumbing | Current irrigation/terms pages | Preserve scope |
@@ -22,6 +22,8 @@ Audit date: September 8, 2026.
 The first implementation pass incorrectly interpreted a clarification as meaning Ben was taking over the business. The user corrected this on September 8, 2026: **Kyle is the current owner/operator.** Public-facing copy must identify Kyle accordingly and must not describe Ben as the current owner/operator.
 
 ## Claims intentionally held out of promotional copy pending verification
+
+- The old site's “since 1999” claim is disputed and is not authoritative verification. No founding date, personal experience duration or certification duration is published.
 
 - SC DHEC cross-connection number, ABPA membership and BBB accreditation should not be promoted until current holder/status is verified.
 - 24/7 emergency service, weekday hours, warranty, never-subcontracted work, same-visit repairs and similar operational promises need explicit current confirmation before publication.
